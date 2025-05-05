@@ -8,9 +8,14 @@ import {
 } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
+import LatestNews from "./components/LatestNews";
+import MainPage from "./layouts/MainPage";
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<Navbar />}></Route>)
+  createRoutesFromElements(
+    <Route path="/" element={<MainPage />}>
+    </Route>
+  )
 );
 
 function App() {

@@ -1,7 +1,9 @@
 export async function fetchLatestNews(){
+    console.log(`${import.meta.env.VITE_API_BASE_URL}/latest-news`);
+
     const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/latest-news`, {
         headers: {
-            'Authorization': `Bearer ${import.meta.env.VITE_API_KEY}`,
+            'Authorization': import.meta.env.VITE_API_KEY,
             'Content-Type': 'application/json'
         }
     })
