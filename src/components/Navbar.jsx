@@ -8,8 +8,9 @@ const Navbar = () => {
       <a href="/">
         <span>New For Kids</span>
       </a>
-      <Link to="/">Link 1</Link>
-      <Link to="/">Link 2</Link>
+      <Link to="/">Home</Link>
+      <Link to="/">Categories</Link>
+      <Link to="/">About us</Link>
     </nav>
   );
 };

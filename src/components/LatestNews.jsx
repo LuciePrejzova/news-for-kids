@@ -5,24 +5,33 @@ const LatestNews = () => {
     const [news, setNews] = useState([]);
     const [error, setError] = useState(null);
 
-   try {
+
      useEffect(()=> {
          fetchLatestNews()
          .then(setNews)
-         .then(console.log(news))
          .catch(setError)
      },[])
-   } catch (error) {
-    console.log(error)
-   }
+  
 
     console.log(news);
 
     if(error) return <p>Error: {error.message}</p>;
-    if (!news.length) return <p>Loading...</p>
+    // if (!news.length) return <p>Loading...</p>
     
   return (
-    <div>LatestNews</div>
+    <div>
+        <h1>Latest News</h1>
+        <ul>
+            {news.map((article, index) => {
+                return <li key={article.id || index}>
+                    <h2>{article.title}</h2>
+                    <img src={article.image}/>
+                    <p>{article.description}</p>
+                    <a href={article.url} target='_blank'>Read more</a>
+                    </li>
+            })}
+        </ul>
+        </div>
   )
 }
 
