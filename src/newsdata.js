@@ -74,6 +74,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter H",
+    category: "general"
   },
   {
     id: "739c4a59-3ad1-44d5-a9c3-02a367b739a1",
@@ -84,6 +85,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter I",
+    category: "general"
   },
   {
     id: "7f2cd3a5-1cbb-4553-b29e-18ef8a5382a3",
@@ -94,6 +96,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter J",
+    category: "general"
   },
   {
     id: "017cbf88-45fa-4e5b-b79c-0cc1b0fc3611",
@@ -104,6 +107,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter K",
+    category: "regional"
   },
   {
     id: "2299ae93-5d6a-46b5-8bcd-5df0c9c0d6de",
@@ -114,6 +118,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter L",
+    category: "regional"
   },
   {
     id: "ea1d926c-5148-4233-bbdd-5ac7e15288fa",
@@ -124,6 +129,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter M",
+    category: "regional"
   },
   {
     id: "5f0be548-faad-4f1e-92c2-2b9d9734b180",
@@ -134,6 +140,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter N",
+    category: "technology"
   },
   {
     id: "6d3c0ccf-1300-4980-9f0e-1e9ebedc40fc",
@@ -144,6 +151,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter O",
+    category: "technology"
   },
   {
     id: "6ecb2c96-03c7-4ddf-98d4-9efc84e28dc0",
@@ -154,6 +162,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter P",
+    category: "technology"
   },
   {
     id: "4fcf935f-cce4-499d-b3e9-e89cfb4fc5f1",
@@ -164,6 +173,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter Q",
+    category: "lifestyle"
   },
   {
     id: "d837716f-3ddf-4577-9f52-8f40aa96c83b",
@@ -174,6 +184,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter R",
+    category: "lifestyle"
   },
   {
     id: "10b23d13-9b3b-4f71-a107-c40d81b4fbc3",
@@ -184,6 +195,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter S",
+    category: "lifestyle"
   },
   {
     id: "43f130e4-96cc-4b2c-8032-df7509dcde1c",
@@ -194,6 +206,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter T",
+    category: "business"
   },
   {
     id: "d18b3b7d-71aa-4620-a787-1f6d6613fabc",
@@ -204,6 +217,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter U",
+    category: "business"
   },
 ];
 

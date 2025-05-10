@@ -3,10 +3,11 @@ import Navbar from "../components/Navbar";
 import LatestNews from "../components/LatestNews";
 import NewsOfTheDay from "../components/NewsOfTheDay";
 import ArticleCategories from "../components/ArticleCategories";
+import './MainPage.css';
 
 const MainPage = () => {
   return (
-    <div>
+    <div className="main-page">
       <h1>Main Page</h1>
       <Navbar />
       <NewsOfTheDay />
