@@ -1,5 +1,5 @@
 .main-page{
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: auto;
+    /* margin: 0 auto; */
     padding: 1rem;
 }

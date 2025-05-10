@@ -3,9 +3,9 @@ import './ArticleElement.css'
 
 const ArticleElement = ({article}) => {
   return (
-    <div>
+    <div className='article-element'>
         <img src={article.image}></img>
-        <h3>{article.title}</h3>
+        <h4>{article.title}</h4>
     </div>
   )
 }
