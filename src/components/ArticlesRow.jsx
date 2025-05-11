@@ -1,21 +1,36 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./ArticlesRow.css";
 import ArticleElement from "./ArticleElement";
 
 const ArticlesRow = ({ category, articles }) => {
-  console.log("articles prop received:", articles);
+  const scrollRef = useRef(); // Ref k samotnému scrolovatelnému divu
 
-  if (!articles) return <p>No articles</p>;
+  const scroll = (direction) => {
+    const container = scrollRef.current;
+    const scrollAmount = container.offsetWidth; // scroll o velikost viditelné oblasti
+    container.scrollBy({
+      left: direction === "left" ? -scrollAmount : scrollAmount,
+      behavior: "smooth"
+    });
+  };
+
+  const filtered = articles.filter((article) => article.category === category);
+
+  if (!filtered.length) return null;
 
   return (
     <div className="article-row-container">
       <h3>{category.toUpperCase()}</h3>
-      <div className="article-row">
-        {articles
-          .filter((article) => article.category === category)
-          .map((article) => (
+      <div className="slider-container">
+        <button className="arrow left" onClick={() => scroll("left")}>&lt;</button>
+
+        <div className="article-row" ref={scrollRef}>
+          {filtered.map((article) => (
             <ArticleElement key={article.id} article={article} />
           ))}
+        </div>
+
+        <button className="arrow right" onClick={() => scroll("right")}>&gt;</button>
       </div>
     </div>
   );
