@@ -21,7 +21,7 @@ const NewsOfTheDay = () => {
   if (loading) return <p>Loading...</p>;
   if (!article) return <p>No article found</p>;
 
-  return <div>
+  return <div className="news-of-the-day">
     <h2>News Of The Day</h2>
     <img src={article.image}/>
     <h3>{article.title}</h3>

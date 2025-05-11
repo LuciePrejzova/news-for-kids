@@ -6,8 +6,9 @@ const newsdata = [
       "Former Maine Gov. Paul LePage (R) filed paperwork …District, which Rep. Jared Golden (D) represents.",
     url: "https://www.breitbart.com/politics/2025/05/04/form…-lepage-files-congressional-run-rep-jared-golden/",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlaT-EY-hDPY1Qde6-5QAKrSfPzGA8_ozCKw&s",
     author: "Elizabeth Weibel",
+    category: "general",
   },
   {
     id: "62b5ea08-f412-44ec-a117-16fe457bac77",
@@ -17,9 +18,10 @@ const newsdata = [
       "National Institutes of Health (NIH) director Jay B…on Musk posted on X that he would investigate ...",
     url: "https://www.foxnews.com/politics/nih-closes-experi…cused-brutally-killing-thousands-beagles-40-years",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_TLJ6ZnY9TKeJStZIPjl8_7Tu1rO1XVsdA&s",
 
     author: "foxnews",
+    category: "general",
   },
   {
     id: "cac411f4-32a5-44e3-ae06-f371517237ae",
@@ -28,9 +30,10 @@ const newsdata = [
       "Texas Rep. Jasmine Crockett (D) has been accused b….\n\nIn a Sunday post on X, Republican Rep. Lisa...",
     url: "https://www.breitbart.com/politics/2025/05/04/demo…ul-jasmine-crockett-accused-cutting-airport-line/",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0wvj2caokPnNWS6WOvcxabzYzGuCkFTWEyA&s",
 
     author: "Paul Bois",
+    category: "general",
   },
   {
     id: "92a7fba0-7e8f-4dc1-bf26-4d00a7f3be7a",
@@ -39,9 +42,10 @@ const newsdata = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is sample article 4.",
     url: "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvzVJRAz43bXqNsrDzhDc4rd0F_h5qPi_j3w&s",
 
     author: "Reporter E",
+    category: "general",
   },
   {
     id: "c44b44ea-33a3-419c-b13a-08aaabf1222b",
@@ -50,9 +54,10 @@ const newsdata = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is sample article 5.",
     url: "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi4bYQZQHCzXawhYUiaU0MF8Rr8MEjl-pXeQ&s",
 
     author: "Reporter F",
+    category: "general",
   },
   {
     id: "bd3e7c73-bfcf-40f1-bb4f-88267444672f",
@@ -61,9 +66,10 @@ const newsdata = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is sample article 6.",
     url: "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu-KP5UU8o0wGzdkNBUH0ipgGZwx22mevdqQ&s",
 
     author: "Reporter G",
+    category: "general",
   },
   {
     id: "bf1497f3-1de1-4a67-8ac1-42c1a7129b8f",
@@ -72,9 +78,9 @@ const newsdata = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is sample article 7.",
     url: "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_TLJ6ZnY9TKeJStZIPjl8_7Tu1rO1XVsdA&s",
     author: "Reporter H",
-    category: "general"
+    category: "general",
   },
   {
     id: "739c4a59-3ad1-44d5-a9c3-02a367b739a1",
@@ -83,9 +89,9 @@ const newsdata = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is sample article 8.",
     url: "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu-KP5UU8o0wGzdkNBUH0ipgGZwx22mevdqQ&s",
     author: "Reporter I",
-    category: "general"
+    category: "general",
   },
   {
     id: "7f2cd3a5-1cbb-4553-b29e-18ef8a5382a3",
@@ -96,7 +102,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter J",
-    category: "general"
+    category: "general",
   },
   {
     id: "017cbf88-45fa-4e5b-b79c-0cc1b0fc3611",
@@ -107,7 +113,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter K",
-    category: "regional"
+    category: "regional",
   },
   {
     id: "2299ae93-5d6a-46b5-8bcd-5df0c9c0d6de",
@@ -116,9 +122,9 @@ const newsdata = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is sample article 11.",
     url: "https://example.com/news/sample-11",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_TLJ6ZnY9TKeJStZIPjl8_7Tu1rO1XVsdA&s",
     author: "Reporter L",
-    category: "regional"
+    category: "regional",
   },
   {
     id: "ea1d926c-5148-4233-bbdd-5ac7e15288fa",
@@ -127,9 +133,9 @@ const newsdata = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is sample article 12.",
     url: "https://example.com/news/sample-12",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0wvj2caokPnNWS6WOvcxabzYzGuCkFTWEyA&s",
     author: "Reporter M",
-    category: "regional"
+    category: "regional",
   },
   {
     id: "5f0be548-faad-4f1e-92c2-2b9d9734b180",
@@ -138,9 +144,9 @@ const newsdata = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is sample article 13.",
     url: "https://example.com/news/sample-13",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlaT-EY-hDPY1Qde6-5QAKrSfPzGA8_ozCKw&s",
     author: "Reporter N",
-    category: "technology"
+    category: "technology",
   },
   {
     id: "6d3c0ccf-1300-4980-9f0e-1e9ebedc40fc",
@@ -151,7 +157,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter O",
-    category: "technology"
+    category: "technology",
   },
   {
     id: "6ecb2c96-03c7-4ddf-98d4-9efc84e28dc0",
@@ -162,7 +168,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter P",
-    category: "technology"
+    category: "technology",
   },
   {
     id: "4fcf935f-cce4-499d-b3e9-e89cfb4fc5f1",
@@ -171,9 +177,9 @@ const newsdata = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is sample article 16.",
     url: "https://example.com/news/sample-16",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlaT-EY-hDPY1Qde6-5QAKrSfPzGA8_ozCKw&s",
     author: "Reporter Q",
-    category: "lifestyle"
+    category: "lifestyle",
   },
   {
     id: "d837716f-3ddf-4577-9f52-8f40aa96c83b",
@@ -182,9 +188,9 @@ const newsdata = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is sample article 17.",
     url: "https://example.com/news/sample-17",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_TLJ6ZnY9TKeJStZIPjl8_7Tu1rO1XVsdA&s",
     author: "Reporter R",
-    category: "lifestyle"
+    category: "lifestyle",
   },
   {
     id: "10b23d13-9b3b-4f71-a107-c40d81b4fbc3",
@@ -195,7 +201,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter S",
-    category: "lifestyle"
+    category: "lifestyle",
   },
   {
     id: "43f130e4-96cc-4b2c-8032-df7509dcde1c",
@@ -206,7 +212,7 @@ const newsdata = [
     image:
       "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
     author: "Reporter T",
-    category: "business"
+    category: "business",
   },
   {
     id: "d18b3b7d-71aa-4620-a787-1f6d6613fabc",
@@ -215,9 +221,9 @@ const newsdata = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. This is sample article 20.",
     url: "https://example.com/news/sample-20",
     image:
-      "https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_TLJ6ZnY9TKeJStZIPjl8_7Tu1rO1XVsdA&s",
     author: "Reporter U",
-    category: "business"
+    category: "business",
   },
 ];
 
