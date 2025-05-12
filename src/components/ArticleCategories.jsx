@@ -28,20 +28,21 @@ const ArticleCategories = () => {
   const [articles, setArticles] = useState([]);
   // const [category, setCategory] = useState("default");
 
-useEffect(()=>{
+useEffect(() => {
   fetchLatestNews()
-  .then((data)=>{
-    console.log("Data received "+data);
-    setArticles(data)
-  .catch(error => console.error(error))
-  }
-  )
-  
-},[])
+    .then((data) => {
+      console.log("Data received", data);
+      setArticles(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching articles:", error);
+    });
+}, []);
+
 
   return (
     <div className='article-categories'>
-      <h1>Article Categories</h1>
+      {/* <h1>Article Categories</h1> */}
       {CATEGORIES.map((category) => {
         return <ArticlesRow category={category} articles={articles}/>;
       })}

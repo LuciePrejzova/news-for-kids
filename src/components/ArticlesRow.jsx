@@ -14,7 +14,10 @@ const ArticlesRow = ({ category, articles }) => {
     });
   };
 
-  const filtered = articles.filter((article) => article.category === category);
+  const filtered = articles.filter(
+  article => article.category?.includes(category)
+);
+
 
   if (!filtered.length) return null;
 
