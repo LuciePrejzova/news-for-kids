@@ -12,11 +12,7 @@ const ArticleElement = ({ article }) => {
     <div className="article-element">
       <Link to={`/article/${article.id}`}>
         <img
-          src={
-            article.image !== "None"
-              ? article.image
-              : imageArr[randomInt.current]
-          }
+          src={article.image ? article.image : imageArr[randomInt.current]}
           alt={article.title}
         ></img>
         <h4>{article.title}</h4>

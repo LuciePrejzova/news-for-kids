@@ -5,7 +5,6 @@ import ArticlesRow from "./ArticlesRow";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchArticles } from "../state/reducers/articlesSlice";
 
-
 const CATEGORIES = [
   "regional",
   "technology",
@@ -34,32 +33,35 @@ const ArticleCategories = () => {
   // const [articles, setArticles] = useState([]);
   // const [category, setCategory] = useState("default");
 
-  useEffect(()=>{
-    if(status === 'idle'){
+  useEffect(() => {
+    if (status === "idle") {
       dispatch(fetchArticles());
+      console.log(articles);
     }
-    if(status === 'failed'){
+    if (status === "failed") {
       console.error(error);
     }
-  },[dispatch, status])
+  }, [dispatch, status]);
 
-// useEffect(() => {
-//   fetchLatestNews()
-//     .then((data) => {
-//       console.log("Data received", data);
-//       setArticles(data);
-//     })
-//     .catch((error) => {
-//       console.error("Error fetching articles:", error);
-//     });
-// }, []);
-
+  // useEffect(() => {
+  //   fetchLatestNews()
+  //     .then((data) => {
+  //       console.log("Data received", data);
+  //       setArticles(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error fetching articles:", error);
+  //     });
+  // }, []);
 
   return (
-    <div className='article-categories'>
+    <div className="article-categories">
       {/* <h1>Article Categories</h1> */}
       {CATEGORIES.map((category) => {
-        return <ArticlesRow key={category} category={category} articles={articles}/>;
+        console.log(articles);
+        return (
+          <ArticlesRow key={category} category={category} articles={articles} />
+        );
       })}
     </div>
   );

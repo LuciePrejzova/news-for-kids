@@ -14,8 +14,15 @@ const ArticlesRow = ({ category, articles }) => {
     });
   };
 
-  const filtered = articles.filter(
-  article => article.category?.includes(category)
+//   const filtered = articles.filter(
+//   (article,index) => article.categories[index].label?.includes(category)
+// );
+const filtered = articles.filter(
+  (article) =>
+    article.categories &&
+    article.categories.some((cat) =>
+      cat.label?.toLowerCase().includes(category.toLowerCase())
+    )
 );
 
 
