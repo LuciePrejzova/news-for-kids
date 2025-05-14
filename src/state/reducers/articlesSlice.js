@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { fetchLatestNews } from "../../api/news";
 
 export const fetchArticles = createAsyncThunk("articles/fetch", async () => {
+  console.log("Fetching articles...");
   const response = await fetchLatestNews();
   return response;
 });

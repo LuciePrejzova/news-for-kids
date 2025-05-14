@@ -36,7 +36,7 @@ const ArticleCategories = () => {
   useEffect(() => {
     if (status === "idle") {
       dispatch(fetchArticles());
-      console.log(articles);
+      // console.log(articles);
     }
     if (status === "failed") {
       console.error(error);
@@ -58,7 +58,7 @@ const ArticleCategories = () => {
     <div className="article-categories">
       {/* <h1>Article Categories</h1> */}
       {CATEGORIES.map((category) => {
-        console.log(articles);
+        // console.log(articles);
         return (
           <ArticlesRow key={category} category={category} articles={articles} />
         );

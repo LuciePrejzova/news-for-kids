@@ -9,6 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 const NewsOfTheDay = () => {
   // const [article, setArticle] = useState({});
   // const [loading, setLoading] = useState(true);
+  
   const dispatch = useDispatch();
   const articles = useSelector((state) => state.articles.list);
   const status = useSelector((state) => state.articles.status);
@@ -32,14 +33,13 @@ const NewsOfTheDay = () => {
   useEffect(() => {
     if (status === "idle") {
       dispatch(fetchArticles());
-      // console.log(articles);
     }
     if (status === "failed") {
       console.error(error);
     }
   }, [dispatch, status]);
 
-  // if (loading) return <p>Loading...</p>;
+  if (status === 'loading') return <p>Loading...</p>;
   if (articles.length < 1) return <p>No article found</p>;
 
   return (

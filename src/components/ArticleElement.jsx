@@ -10,7 +10,7 @@ const ArticleElement = ({ article }) => {
 
   return (
     <div className="article-element">
-      <Link to={`/article/${article.id}`}>
+      <Link to={`/article/${article.uri}`}>
         <img
           src={article.image ? article.image : imageArr[randomInt.current]}
           alt={article.title}
