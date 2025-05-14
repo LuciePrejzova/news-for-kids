@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import "./ArticleElement.css";
 import placeholderImg from "../assets/teenage-news-1.png";
 import placeholderImg2 from "../assets/teenage-news-2.png";
@@ -9,7 +10,7 @@ const ArticleElement = ({ article }) => {
 
   return (
     <div className="article-element">
-      <a href={article.url}>
+      <Link to={`/article/${article.id}`}>
         <img
           src={
             article.image !== "None"
@@ -19,7 +20,7 @@ const ArticleElement = ({ article }) => {
           alt={article.title}
         ></img>
         <h4>{article.title}</h4>
-      </a>
+      </Link>
     </div>
   );
 };

@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./ArticleCategories.css";
 import ArticlesRow from "./ArticlesRow";
-import { fetchLatestNews } from '../api/news'
+// import { fetchLatestNews } from '../api/news'
+import { useSelector, useDispatch } from "react-redux";
+import { fetchArticles } from "../state/reducers/articlesSlice";
 
 
 const CATEGORIES = [
@@ -25,26 +27,39 @@ const CATEGORIES = [
 ];
 
 const ArticleCategories = () => {
-  const [articles, setArticles] = useState([]);
+  const dispatch = useDispatch();
+  const articles = useSelector((state) => state.articles.list);
+  const status = useSelector((state) => state.articles.status);
+  const error = useSelector((state) => state.articles.error);
+  // const [articles, setArticles] = useState([]);
   // const [category, setCategory] = useState("default");
 
-useEffect(() => {
-  fetchLatestNews()
-    .then((data) => {
-      console.log("Data received", data);
-      setArticles(data);
-    })
-    .catch((error) => {
-      console.error("Error fetching articles:", error);
-    });
-}, []);
+  useEffect(()=>{
+    if(status === 'idle'){
+      dispatch(fetchArticles());
+    }
+    if(status === 'failed'){
+      console.error(error);
+    }
+  },[dispatch, status])
+
+// useEffect(() => {
+//   fetchLatestNews()
+//     .then((data) => {
+//       console.log("Data received", data);
+//       setArticles(data);
+//     })
+//     .catch((error) => {
+//       console.error("Error fetching articles:", error);
+//     });
+// }, []);
 
 
   return (
     <div className='article-categories'>
       {/* <h1>Article Categories</h1> */}
       {CATEGORIES.map((category) => {
-        return <ArticlesRow category={category} articles={articles}/>;
+        return <ArticlesRow key={category} category={category} articles={articles}/>;
       })}
     </div>
   );

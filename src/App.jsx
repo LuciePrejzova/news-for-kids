@@ -7,13 +7,15 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
-import LatestNews from "./components/LatestNews";
-import MainPage from "./layouts/MainPage";
+import HomePage from "./pages/HomePage";
+import MainLayout from "./layouts/MainLayout";
+import ArticleDetail from "./pages/ArticleDetail";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<MainPage />}>
+    <Route path="/" element={<MainLayout />}>
+      <Route index element={<HomePage/>}/>
+      <Route path='article/:id' element={<ArticleDetail/>}/>
     </Route>
   )
 );
