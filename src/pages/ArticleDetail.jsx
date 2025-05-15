@@ -28,6 +28,7 @@ if(!article) return <p>No article found</p>
     <div className="article-detail">
       <h1>{article.title}</h1>
       <img src={article.image} alt={article.title}/>
+      <p>Published: {article.date} {article.authors.length > 0 && `, author: ${article.authors[0].name}`} Source: {article.source.title}</p>
       <p>{article.body}</p>
       <Link to={article.url}>Read at the original source</Link>
       <Link to='/'>Go back</Link>

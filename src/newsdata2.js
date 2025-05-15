@@ -132,7 +132,7 @@ const newsdata2 = [
         "image": "https://g.denik.cz/66/00/ratiskovice-dukla-praha_denik-630-16x9.jpg",
         "eventUri": null,
         "sentiment": null,
-        "wgt": 484931461,
+        "wgt": 484931568,
         "relevance": 1
     },
     {
