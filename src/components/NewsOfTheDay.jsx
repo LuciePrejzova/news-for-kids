@@ -1,9 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import "./NewsOfTheDay.css";
-import imagePlaceholder from "../assets/teenage-news-1.png";
-import imagePlaceholder2 from "../assets/teenage-news-2.png";
 import { fetchArticles } from "../state/reducers/articlesSlice";
 import { useSelector, useDispatch } from "react-redux";
+import ImagePlaceholder from "./ImagePlaceholder";
 // import { fetchLatestNews } from "../api/news";
 
 const NewsOfTheDay = () => {
@@ -14,9 +13,6 @@ const NewsOfTheDay = () => {
   const articles = useSelector((state) => state.articles.list);
   const status = useSelector((state) => state.articles.status);
   const error = useSelector((state) => state.articles.error);
-
-  const imageArr = [imagePlaceholder, imagePlaceholder2];
-  const randomInt = useRef(Math.floor(Math.random() * 2));
 
   // useEffect(() => {
   //   fetchLatestNews()
@@ -49,7 +45,7 @@ const NewsOfTheDay = () => {
       const hasValidImg = article.image !== null;
       const hasTitle = article.title !== null;
       const isCzech = article.lang === "ces";
-      return hasValidImg && isCzech;
+      return hasValidImg && isCzech && hasTitle;
     });
 
     if (filtered.length === 0) return null;
@@ -61,17 +57,16 @@ const NewsOfTheDay = () => {
 
   const pickedNews = pickNewOfTheDay(articles);
 
-  if(!pickedNews) return <p>No suitable article found</p>
+  if (!pickedNews) return <p>No suitable article found</p>;
 
   return (
     <div className="news-of-the-day">
       <h2>News Of The Day</h2>
-      <img
-        src={
-          pickedNews.image ? pickedNews.image : imageArr[randomInt.current]
-        }
-        alt={pickedNews.title}
-      />
+      {pickedNews.image ? (
+        <img src={pickedNews.image} alt={pickedNews.title} />
+      ) : (
+        <ImagePlaceholder title={pickedNews.title} />
+      )}
       <h3>{pickedNews.title}</h3>
     </div>
   );
