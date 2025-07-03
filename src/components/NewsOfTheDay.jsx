@@ -29,6 +29,7 @@ const NewsOfTheDay = () => {
   useEffect(() => {
     if (status === "idle") {
       dispatch(fetchArticles());
+      console.log(articles);
     }
     if (status === "failed") {
       console.error(error);

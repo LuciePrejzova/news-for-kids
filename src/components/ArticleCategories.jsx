@@ -4,25 +4,17 @@ import ArticlesRow from "./ArticlesRow";
 // import { fetchLatestNews } from '../api/news'
 import { useSelector, useDispatch } from "react-redux";
 import { fetchArticles } from "../state/reducers/articlesSlice";
+import keywordsByCategory from "../keywordsByCategory";
 
-const CATEGORIES = [
-  "regional",
-  "technology",
-  "lifestyle",
-  "business",
-  "general",
-  "programming",
-  "science",
-  "entertainment",
-  "world",
-  "sports",
-  "finance",
-  "academia",
-  "politics",
-  "health",
-  "opinion",
-  "food",
-  "game",
+const CHILD_FRIENDLY_CATEGORIES = [
+  "příroda",
+  "věda",
+  "technologie",
+  "sport",
+  "zábava",
+  "zdraví",
+  "cestování",
+  "ostatní",
 ];
 
 const ArticleCategories = () => {
@@ -36,7 +28,8 @@ const ArticleCategories = () => {
   useEffect(() => {
     if (status === "idle") {
       dispatch(fetchArticles());
-      // console.log(articles);
+
+      console.log(articles);
     }
     if (status === "failed") {
       console.error(error);
@@ -54,13 +47,45 @@ const ArticleCategories = () => {
   //     });
   // }, []);
 
+  const categorizeArticle = (articleText) => {
+    const categories = [];
+
+    for (const [category, keywords] of Object.entries(keywordsByCategory)) {
+      for (const keyword of keywords) {
+        if (articleText.toLowerCase().includes(keyword.toLowerCase())) {
+          categories.push(category);
+          break;
+        }
+      }
+    }
+
+    if (categories.length === 0) {
+      categories.push("ostatní");
+    }
+
+    return categories;
+  };
+
+  const enrichedArticles = articles.map((article) => {
+  const customCategories = categorizeArticle(article.title + " " + article.body);
+  console.log(article.title, customCategories); // ➤ ZDE UVIDÍŠ CO SE PŘIŘADILO
+  return {
+    ...article,
+    customCategories,
+  };
+});
+
   return (
     <div className="article-categories">
       {/* <h1>Article Categories</h1> */}
-      {CATEGORIES.map((category) => {
+      {CHILD_FRIENDLY_CATEGORIES.map((category) => {
         // console.log(articles);
         return (
-          <ArticlesRow key={category} category={category} articles={articles} />
+          <ArticlesRow
+            key={category}
+            category={category}
+            articles={enrichedArticles}
+          />
         );
       })}
     </div>

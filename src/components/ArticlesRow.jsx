@@ -4,6 +4,8 @@ import ArticleElement from "./ArticleElement";
 
 const ArticlesRow = ({ category, articles }) => {
   const scrollRef = useRef(); // Ref k samotnému scrolovatelnému divu
+  console.log(category, articles.filter(a => a.customCategories.includes(category)));
+
 
   const scroll = (direction) => {
     const container = scrollRef.current;
@@ -19,11 +21,10 @@ const ArticlesRow = ({ category, articles }) => {
 // );
 const filtered = articles.filter(
   (article) =>
-    article.categories &&
-    article.categories.some((cat) =>
-      cat.label?.toLowerCase().includes(category.toLowerCase())
-    )
+    article.customCategories &&
+    article.customCategories.some(cat => cat.toLowerCase() === category.toLowerCase())
 );
+console.log("→", category, filtered.length);
 
 
   if (!filtered.length) return null;
@@ -36,7 +37,7 @@ const filtered = articles.filter(
 
         <div className="article-row" ref={scrollRef}>
           {filtered.map((article) => (
-            <ArticleElement key={article.id} article={article} />
+            <ArticleElement key={article.uri} article={article} />
           ))}
         </div>
 
