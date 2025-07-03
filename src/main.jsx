@@ -5,11 +5,14 @@ import "./index.css";
 import App from "./App.jsx";
 import { store } from "./state/store.js";
 import { Provider } from "react-redux";
+import UserProvider from "./context/UserProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   // <StrictMode>
-    <Provider store={store}>
+  <Provider store={store}>
+    <UserProvider>
       <App />
-    </Provider>
+    </UserProvider>
+  </Provider>
   // </StrictMode>
 );
