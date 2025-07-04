@@ -1,12 +1,53 @@
-# React + Vite
+# Kids News App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About the Project
 
-Currently, two official plugins are available:
+This repository contains the first stage of my **React coding course final project**. The application is designed to present daily news to children in an engaging and safe way. It allows kids to access a variety of topics, presented in a format suitable for their age group.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Vision
 
-## Expanding the ESLint configuration
+While this is currently a frontend project built with React, I intend to continue developing it beyond this course as a long-term personal project with multiple future stages:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+### Stage 1 – ✅ Current Stage
+
+- Display latest news articles fetched from a public API.
+- Categorize articles into child-friendly categories.
+- Provide a simple, clear user interface for kids to browse articles.
+
+---
+
+### Stage 2 – Planned AI Integration
+
+- Integrate **AI-powered summarization** to automatically rewrite news articles into simplified language that children can easily understand.
+- Implement **vocabulary assistance**: highlight complex words and provide simple explanations to help children learn new words as they read.
+
+---
+
+### Stage 3 – Gamification
+
+- Introduce **gamification elements** to motivate children to read regularly:
+  - Earn points for reading articles.
+  - Unlock achievements and badges.
+  - Introduce a **leaderboard system**.
+  - Encourage friendly competition while promoting educational reading habits.
+
+---
+
+## The Core Idea
+
+In today’s world, children often consume content via social media algorithms that primarily serve them topics they're already interested in, leading to **algorithmic echo chambers**. This project aims to offer an **alternative educational platform** where kids can regularly access **objective, diverse, and balanced news** — beyond what algorithms suggest — and develop their awareness of current events from a young age.
+
+---
+
+## Technologies
+
+- React
+- Redux & Redux Toolkit
+- CSS / Flexbox for responsive design
+- NewsAPI / EventRegistry integration (future stages will expand on this)
+
+---
+
+I hope to eventually turn this into a fully functional educational tool for children, parents, and schools.
