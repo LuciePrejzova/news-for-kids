@@ -25,8 +25,24 @@ const UserProvider = ({ children }) => {
     setUser(null);
   };
 
+  const addFavoriteCategory = (category) => {
+    const updatedUser = {
+      ...user,
+      favorites: [...(user.favorites || []), category]
+    };
+    setUser(updatedUser);
+  }
+
+  const removeFavoriteCategory = (category) => {
+    const updatedUser = {
+      ...user,
+      favorites:(user.favorites || []).filter(cat => cat !== category)
+    };
+    setUser(updatedUser);
+  }
+
   return (
-    <UserContext.Provider value={{ user, login, logout }}>
+    <UserContext.Provider value={{ user, login, logout, addFavoriteCategory, removeFavoriteCategory }}>
       {children}
     </UserContext.Provider>
   );

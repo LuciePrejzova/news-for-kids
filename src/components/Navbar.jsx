@@ -1,10 +1,17 @@
 import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useUser from "../context/useUser";
 
+
 const Navbar = () => {
-  const { user } = useUser();
+  const { user, logout } = useUser();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  }
 
   return (
     <nav>
@@ -16,7 +23,10 @@ const Navbar = () => {
       <div className="navbar-links">
         <Link to="/">Home</Link>
         {user ? (
-          <Link to="/">Logout</Link>
+          <>
+          <Link to='/favorites'>Favorites</Link>
+          <button onClick={handleLogout} className="logout-button">Logout</button>
+          </>
         ) : (
           <div className="navbar-links">
             <Link to="/login">Log-in</Link>

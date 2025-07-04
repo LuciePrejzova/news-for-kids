@@ -5,6 +5,7 @@ import ArticlesRow from "./ArticlesRow";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchArticles } from "../state/reducers/articlesSlice";
 import keywordsByCategory from "../keywordsByCategory";
+import useUser from "../context/useUser";
 
 const CHILD_FRIENDLY_CATEGORIES = [
   "příroda",
@@ -17,7 +18,8 @@ const CHILD_FRIENDLY_CATEGORIES = [
   "ostatní",
 ];
 
-const ArticleCategories = () => {
+const ArticleCategories = ({categoriesToShow= CHILD_FRIENDLY_CATEGORIES}) => {
+  const {user} = useUser();
   const dispatch = useDispatch();
   const articles = useSelector((state) => state.articles.list);
   const status = useSelector((state) => state.articles.status);
@@ -68,7 +70,7 @@ const ArticleCategories = () => {
 
   const enrichedArticles = articles.map((article) => {
   const customCategories = categorizeArticle(article.title + " " + article.body);
-  console.log(article.title, customCategories); // ➤ ZDE UVIDÍŠ CO SE PŘIŘADILO
+  console.log(article.title, customCategories);
   return {
     ...article,
     customCategories,
@@ -78,7 +80,17 @@ const ArticleCategories = () => {
   return (
     <div className="article-categories">
       {/* <h1>Article Categories</h1> */}
-      {CHILD_FRIENDLY_CATEGORIES.map((category) => {
+      {!user ? CHILD_FRIENDLY_CATEGORIES.map((category) => {
+        // console.log(articles);
+        return (
+          <ArticlesRow
+            key={category}
+            category={category}
+            articles={enrichedArticles}
+          />
+        );
+      }) : 
+      categoriesToShow.map((category) => {
         // console.log(articles);
         return (
           <ArticlesRow

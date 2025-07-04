@@ -6,7 +6,7 @@ const Register = () => {
   const [step, setStep] = useState(1);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const formSubmit = (event) => {
     event.preventDefault();
@@ -15,10 +15,24 @@ const Register = () => {
       return;
     }
 
-    if(password!==confirmPassword) {
-        setError('Hesla se neshoduji');
-        return;
+    if (password !== confirmPassword) {
+      setError("Hesla se neshoduji");
+      return;
     }
+
+    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
+    const userExists = existingUsers.some((user) => user.email === email);
+    if (userExists) {
+      setError("Uzivatel s timto e-mailem jiz existuje.");
+      return;
+    }
+
+    const newUser = { email, password, favorites: [] };
+    const updatedUsers = [...existingUsers, newUser];
+
+    localStorage.setItem("users", JSON.stringify(updatedUsers));
+    console.log(localStorage.getItem('users'));
+
     setStep(3);
   };
 
@@ -57,7 +71,9 @@ const Register = () => {
           <button>Dokončit</button>
         </form>
       )}
-      {step === 3 && <div className="register-success">Registrace probehla uspesne</div>}
+      {step === 3 && (
+        <div className="register-success">Registrace probehla uspesne</div>
+      )}
     </div>
   );
 };
