@@ -13,6 +13,7 @@ import ArticleDetail from "./pages/ArticleDetail";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import FavoritesPage from "./pages/FavoritesPage";
+import AboutUs from "./pages/AboutUs";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,8 @@ const router = createBrowserRouter(
       <Route path= 'register' element={<Register/>}/>
       <Route path= 'login' element={<Login/>}/>
       <Route path= 'favorites' element={<FavoritesPage/>}/>
+      <Route path= 'about' element={<AboutUs/>}/>
+
 
 
     </Route>
