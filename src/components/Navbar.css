@@ -25,5 +25,6 @@ a{
   color: inherit;
   cursor: pointer;
   font: inherit;
+  text-transform: uppercase;
   padding: 0;
 }

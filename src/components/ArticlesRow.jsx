@@ -37,15 +37,32 @@ const ArticlesRow = ({ category, articles }) => {
   if (!filtered.length) return null;
 
   const addToFavorite = (category) => {
-    if (!user) {
-      navigate("/login");
-      return;
+  if (!user) {
+    navigate("/login");
+    return;
+  }
+
+  const usersArr = JSON.parse(localStorage.getItem('users') || '[]');
+  const userIndex = usersArr.findIndex(u => u.email === user.email);
+
+  if (userIndex !== -1) {
+    const currentUser = usersArr[userIndex];
+
+    if (!currentUser.favorites) {
+      currentUser.favorites = [];
     }
 
-    if (!user.favorites?.includes(category)) {
+    if (!currentUser.favorites.includes(category)) {
+      currentUser.favorites.push(category);
+      usersArr[userIndex] = currentUser;
+
+      localStorage.setItem('users', JSON.stringify(usersArr));
+
       addFavoriteCategory(category);
     }
-  };
+  }
+};
+
 
   return (
     <div className="article-row-container">
