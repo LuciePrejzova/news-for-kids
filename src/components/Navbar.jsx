@@ -17,23 +17,23 @@ const Navbar = () => {
     <nav>
       <div>
         <a href="/">
-          <span>News For Kids</span>
+          <span>Zprávy pro děti</span>
         </a>
       </div>
       <div className="navbar-links">
-        <Link to="/">Home</Link>
+        <Link to="/">Domů</Link>
         {user ? (
           <>
-          <Link to='/favorites'>Favorites</Link>
-          <button onClick={handleLogout} className="logout-button">Logout</button>
+          <Link to='/favorites'>Oblíbené</Link>
+          <button onClick={handleLogout} className="logout-button">Odhlásit</button>
           </>
         ) : (
           <div className="navbar-links">
-            <Link to="/login">Log-in</Link>
-            <Link to="/register">Register</Link>
+            <Link to="/login">Přihlásit</Link>
+            <Link to="/register">Registrovat</Link>
           </div>
         )}
-        <Link to="/about">About us</Link>
+        <Link to="/about">O projektu</Link>
       </div>
     </nav>
   );

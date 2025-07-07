@@ -62,7 +62,7 @@ const NewsOfTheDay = () => {
 
   return (
     <div className="news-of-the-day">
-      <h2>News Of The Day</h2>
+      <h2>Zpráva dne</h2>
       {pickedNews.image ? (
         <img src={pickedNews.image} alt={pickedNews.title} />
       ) : (

@@ -4,7 +4,7 @@ import "./AboutUs.css";
 const AboutUs = () => {
   return (
     <div className="about-us-container">
-      <h1>O nás</h1>
+      <h1>O projektu</h1>
       <p>
         Tento projekt vznikl s cílem zpřístupnit důležité zprávy dětem ve věku 8 až 13 let
         v bezpečné, srozumitelné a hravé podobě. Věříme, že i mladší generace by měla mít
