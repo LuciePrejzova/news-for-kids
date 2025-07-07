@@ -5,7 +5,7 @@ import useUser from "../context/useUser";
 import { useNavigate } from "react-router-dom";
 
 const ArticlesRow = ({ category, articles }) => {
-  const { user, addFavoriteCategory } = useUser();
+  const { user, addFavoriteCategory, removeFavoriteCategory } = useUser();
   const scrollRef = useRef(); // Ref k samotnému scrolovatelnému divu
   const navigate = useNavigate();
   // console.log(
@@ -32,44 +32,52 @@ const ArticlesRow = ({ category, articles }) => {
         (cat) => cat.toLowerCase() === category.toLowerCase()
       )
   );
-  console.log("→", category, filtered.length);
 
   if (!filtered.length) return null;
 
-  const addToFavorite = (category) => {
+  const handleFavorite = (category) => {
   if (!user) {
     navigate("/login");
     return;
   }
 
-  const usersArr = JSON.parse(localStorage.getItem('users') || '[]');
-  const userIndex = usersArr.findIndex(u => u.email === user.email);
+  const usersArr = JSON.parse(localStorage.getItem("users") || "[]");
+  const userIndex = usersArr.findIndex((u) => u.email === user.email);
 
-  if (userIndex !== -1) {
-    const currentUser = usersArr[userIndex];
+  if (userIndex === -1) return;
 
-    if (!currentUser.favorites) {
-      currentUser.favorites = [];
-    }
+  const currentUser = usersArr[userIndex];
+  currentUser.favorites = currentUser.favorites || [];
 
-    if (!currentUser.favorites.includes(category)) {
-      currentUser.favorites.push(category);
-      usersArr[userIndex] = currentUser;
+  const isFavorite = currentUser.favorites.includes(category);
 
-      localStorage.setItem('users', JSON.stringify(usersArr));
-
-      addFavoriteCategory(category);
-    }
+  if (isFavorite) {
+    currentUser.favorites = currentUser.favorites.filter((cat) => cat !== category);
+    removeFavoriteCategory(category); // use context
+  } else {
+    currentUser.favorites.push(category);
+    addFavoriteCategory(category); // use context
   }
+
+  usersArr[userIndex] = currentUser;
+  localStorage.setItem("users", JSON.stringify(usersArr));
 };
 
 
   return (
     <div className="article-row-container">
-      <div>
+      <div className="category-header">
         <h3>{category.toUpperCase()}</h3>
-        <button onClick={() => addToFavorite(category)}>
-          {user?.favorites?.includes(category) ? "⭐" : "☆"}
+        <button
+          className="star"
+          onClick={() => handleFavorite(category)}
+          title={
+            user?.favorites?.includes(category)
+              ? "Remove from favorites"
+              : "Add to favorites"
+          }
+        >
+          {user?.favorites?.includes(category) ? "★" : "☆"}
         </button>
       </div>
       <div className="slider-container">

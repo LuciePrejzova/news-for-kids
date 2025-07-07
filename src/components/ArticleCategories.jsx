@@ -79,9 +79,7 @@ const ArticleCategories = ({categoriesToShow= CHILD_FRIENDLY_CATEGORIES}) => {
 
   return (
     <div className="article-categories">
-      {/* <h1>Article Categories</h1> */}
       {!user ? CHILD_FRIENDLY_CATEGORIES.map((category) => {
-        // console.log(articles);
         return (
           <ArticlesRow
             key={category}
@@ -91,7 +89,6 @@ const ArticleCategories = ({categoriesToShow= CHILD_FRIENDLY_CATEGORIES}) => {
         );
       }) : 
       categoriesToShow.map((category) => {
-        // console.log(articles);
         return (
           <ArticlesRow
             key={category}

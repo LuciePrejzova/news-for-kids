@@ -22,7 +22,7 @@
 }
 
 .arrow {
-  background-color: #1B1432;
+  background-color: #1b1432;
   color: white;
   border: none;
   font-size: 2rem;
@@ -44,4 +44,30 @@
 
 .arrow.right {
   margin-left: 0.5rem;
+}
+
+.star {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.6rem;
+  padding: 0;
+}
+
+.star:hover {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.8rem;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
