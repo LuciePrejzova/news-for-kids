@@ -1,11 +1,8 @@
-import React from "react";
-
-import LatestNews from "../components/LatestNews";
 import NewsOfTheDay from "../components/NewsOfTheDay";
 import ArticleCategories from "../components/ArticleCategories";
-import './HomePage.css';
+import "./HomePage.css";
 
-const MainPage = () => {
+const HomePage = () => {
   return (
     <div className="main-page">
       <NewsOfTheDay />
@@ -14,4 +11,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default HomePage;

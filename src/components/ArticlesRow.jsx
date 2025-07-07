@@ -6,25 +6,18 @@ import { useNavigate } from "react-router-dom";
 
 const ArticlesRow = ({ category, articles }) => {
   const { user, addFavoriteCategory, removeFavoriteCategory } = useUser();
-  const scrollRef = useRef(); // Ref k samotnému scrolovatelnému divu
+  const scrollRef = useRef();
   const navigate = useNavigate();
-  // console.log(
-  //   category,
-  //   articles.filter((a) => a.customCategories.includes(category))
-  // );
 
   const scroll = (direction) => {
     const container = scrollRef.current;
-    const scrollAmount = container.offsetWidth; // scroll o velikost viditelné oblasti
+    const scrollAmount = container.offsetWidth;
     container.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
       behavior: "smooth",
     });
   };
 
-  //   const filtered = articles.filter(
-  //   (article,index) => article.categories[index].label?.includes(category)
-  // );
   const filtered = articles.filter(
     (article) =>
       article.customCategories &&
@@ -36,33 +29,38 @@ const ArticlesRow = ({ category, articles }) => {
   if (!filtered.length) return null;
 
   const handleFavorite = (category) => {
-  if (!user) {
-    navigate("/login");
-    return;
-  }
+    if (!user) {
+      navigate("/login");
+      return;
+    }
 
-  const usersArr = JSON.parse(localStorage.getItem("users") || "[]");
-  const userIndex = usersArr.findIndex((u) => u.email === user.email);
+    const usersArr = JSON.parse(localStorage.getItem("users") || "[]");
+    const userIndex = usersArr.findIndex((u) => u.email === user.email);
 
-  if (userIndex === -1) return;
+    if (userIndex === -1) return;
 
-  const currentUser = usersArr[userIndex];
-  currentUser.favorites = currentUser.favorites || [];
+    const currentUser = usersArr[userIndex];
+    currentUser.favorites = currentUser.favorites || [];
 
-  const isFavorite = currentUser.favorites.includes(category);
+    const isFavorite = currentUser.favorites.includes(category);
 
-  if (isFavorite) {
-    currentUser.favorites = currentUser.favorites.filter((cat) => cat !== category);
-    removeFavoriteCategory(category); // use context
-  } else {
-    currentUser.favorites.push(category);
-    addFavoriteCategory(category); // use context
-  }
+    if (isFavorite) {
+      currentUser.favorites = currentUser.favorites.filter((cat) => cat !== category);
+      removeFavoriteCategory(category);
+    } else {
+      currentUser.favorites.push(category);
+      addFavoriteCategory(category);
+    }
 
-  usersArr[userIndex] = currentUser;
-  localStorage.setItem("users", JSON.stringify(usersArr));
-};
+    usersArr[userIndex] = currentUser;
+    localStorage.setItem("users", JSON.stringify(usersArr));
+  };
 
+  // Create preview list for non-logged-in users
+  const previewArticle = { isPreviewPlaceholder: true, uri: "login-prompt" };
+  const articlesToRender = !user
+    ? [...filtered.slice(0, 3), previewArticle]
+    : filtered;
 
   return (
     <div className="article-row-container">
@@ -80,13 +78,14 @@ const ArticlesRow = ({ category, articles }) => {
           {user?.favorites?.includes(category) ? "★" : "☆"}
         </button>
       </div>
+
       <div className="slider-container">
         <button className="arrow left" onClick={() => scroll("left")}>
           &lt;
         </button>
 
         <div className="article-row" ref={scrollRef}>
-          {filtered.map((article) => (
+          {articlesToRender.map((article) => (
             <ArticleElement key={article.uri} article={article} />
           ))}
         </div>

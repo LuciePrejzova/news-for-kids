@@ -30,3 +30,33 @@
     transition: transform 0.3s ease;
 }
 
+.login-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-left:0.5rem;
+  background-color: #1f1738;
+  border-radius: 10px;
+  color: white;
+  width: 200px; /* match article width */
+  min-height: 300px; /* match article height */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.login-card button {
+  margin-top: 0.5rem;
+  background-color: #4a3fa0;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-card button:hover {
+  background-color: #5c4fd0;
+}
