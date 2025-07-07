@@ -1,5 +1,6 @@
 import "./Register.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -7,6 +8,18 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (step === 3) {
+      const timeout = setTimeout(() => {
+        navigate("/login");
+      }, 1500);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [step, navigate]);
 
   const formSubmit = (event) => {
     event.preventDefault();
@@ -31,7 +44,7 @@ const Register = () => {
     const updatedUsers = [...existingUsers, newUser];
 
     localStorage.setItem("users", JSON.stringify(updatedUsers));
-    console.log(localStorage.getItem('users'));
+    console.log(localStorage.getItem("users"));
 
     setStep(3);
   };
