@@ -14,9 +14,9 @@ const Navbar = () => {
   return (
     <nav>
       <div>
-        <a href="/">
+        <Link to="/">
           <span>Zprávy pro děti</span>
-        </a>
+        </Link>
       </div>
       <div className="navbar-links">
         <Link to="/">Domů</Link>
