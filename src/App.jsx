@@ -18,16 +18,19 @@ import NotFound from "./pages/NotFound";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<MainLayout />}>
-      <Route index element={<HomePage />} />
-      <Route path="article/:id" element={<ArticleDetail />} />
-      <Route path="register" element={<Register />} />
-      <Route path="login" element={<Login />} />
-      <Route path="favorites" element={<FavoritesPage />} />
-      <Route path="about" element={<AboutUs />} />
+    <>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="article/:id" element={<ArticleDetail />} />
+        <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />} />
+        <Route path="favorites" element={<FavoritesPage />} />
+        <Route path="about" element={<AboutUs />} />
+      </Route>
       <Route path="*" element={<NotFound />} />
-    </Route>
-  )
+    </>
+  ),
+  { basename: "/news-for-kids" }
 );
 
 function App() {
