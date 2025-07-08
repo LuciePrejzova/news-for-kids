@@ -1,0 +1,34 @@
+.not-found-container {
+  height: 100vh; /* fill full screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  background-color: #1b1432; /* or your app background */
+}
+
+.not-found-container h1 {
+  font-size: 6rem;
+  margin-bottom: 1rem;
+}
+
+.not-found-container p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.not-found-container a {
+  background-color: #4a3fa0;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.not-found-container a:hover {
+  background-color: #5c4fd0;
+}

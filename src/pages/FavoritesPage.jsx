@@ -10,7 +10,7 @@ const FavoritesPage = () => {
   return (
     <div>
       {!user && navigate("/login")}
-      <h1>Favorite categories</h1>
+      <h1>Oblíbené kategorie</h1>
       <ArticleCategories categoriesToShow={user.favorites}/>
     </div>
   );
