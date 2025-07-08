@@ -3,28 +3,12 @@ import "./NewsOfTheDay.css";
 import { fetchArticles } from "../state/reducers/articlesSlice";
 import { useSelector, useDispatch } from "react-redux";
 import ImagePlaceholder from "./ImagePlaceholder";
-// import { fetchLatestNews } from "../api/news";
 
 const NewsOfTheDay = () => {
-  // const [article, setArticle] = useState({});
-  // const [loading, setLoading] = useState(true);
-
   const dispatch = useDispatch();
   const articles = useSelector((state) => state.articles.list);
   const status = useSelector((state) => state.articles.status);
   const error = useSelector((state) => state.articles.error);
-
-  // useEffect(() => {
-  //   fetchLatestNews()
-  //     .then((data) => {
-  //       setArticle(data[0]);
-  //       setLoading(false);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching news: " + error);
-  //       setLoading(false);
-  //     });
-  // }, []);
 
   useEffect(() => {
     if (status === "idle") {

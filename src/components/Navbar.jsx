@@ -1,8 +1,6 @@
-import React from "react";
 import "./Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import useUser from "../context/useUser";
-
 
 const Navbar = () => {
   const { user, logout } = useUser();
@@ -10,8 +8,8 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/');
-  }
+    navigate("/");
+  };
 
   return (
     <nav>
@@ -24,8 +22,10 @@ const Navbar = () => {
         <Link to="/">Domů</Link>
         {user ? (
           <>
-          <Link to='/favorites'>Oblíbené</Link>
-          <button onClick={handleLogout} className="logout-button">Odhlásit</button>
+            <Link to="/favorites">Oblíbené</Link>
+            <button onClick={handleLogout} className="logout-button">
+              Odhlásit
+            </button>
           </>
         ) : (
           <div className="navbar-links">

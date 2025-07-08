@@ -8,11 +8,9 @@ import { Provider } from "react-redux";
 import UserProvider from "./context/UserProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
-  // <StrictMode>
   <Provider store={store}>
     <UserProvider>
       <App />
     </UserProvider>
   </Provider>
-  // </StrictMode>
 );

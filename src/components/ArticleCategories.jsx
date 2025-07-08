@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./ArticleCategories.css";
 import ArticlesRow from "./ArticlesRow";
-// import { fetchLatestNews } from '../api/news'
 import { useSelector, useDispatch } from "react-redux";
 import { fetchArticles } from "../state/reducers/articlesSlice";
 import keywordsByCategory from "../keywordsByCategory";
@@ -18,14 +17,14 @@ const CHILD_FRIENDLY_CATEGORIES = [
   "ostatní",
 ];
 
-const ArticleCategories = ({categoriesToShow= CHILD_FRIENDLY_CATEGORIES}) => {
-  const {user} = useUser();
+const ArticleCategories = ({
+  categoriesToShow = CHILD_FRIENDLY_CATEGORIES,
+}) => {
+  const { user } = useUser();
   const dispatch = useDispatch();
   const articles = useSelector((state) => state.articles.list);
   const status = useSelector((state) => state.articles.status);
   const error = useSelector((state) => state.articles.error);
-  // const [articles, setArticles] = useState([]);
-  // const [category, setCategory] = useState("default");
 
   useEffect(() => {
     if (status === "idle") {
@@ -37,17 +36,6 @@ const ArticleCategories = ({categoriesToShow= CHILD_FRIENDLY_CATEGORIES}) => {
       console.error(error);
     }
   }, [dispatch, status]);
-
-  // useEffect(() => {
-  //   fetchLatestNews()
-  //     .then((data) => {
-  //       console.log("Data received", data);
-  //       setArticles(data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching articles:", error);
-  //     });
-  // }, []);
 
   const categorizeArticle = (articleText) => {
     const categories = [];
@@ -69,34 +57,37 @@ const ArticleCategories = ({categoriesToShow= CHILD_FRIENDLY_CATEGORIES}) => {
   };
 
   const enrichedArticles = articles.map((article) => {
-  const customCategories = categorizeArticle(article.title + " " + article.body);
-  console.log(article.title, customCategories);
-  return {
-    ...article,
-    customCategories,
-  };
-});
+    const customCategories = categorizeArticle(
+      article.title + " " + article.body
+    );
+    console.log(article.title, customCategories);
+    return {
+      ...article,
+      customCategories,
+    };
+  });
 
   return (
     <div className="article-categories">
-      {!user ? CHILD_FRIENDLY_CATEGORIES.map((category) => {
-        return (
-          <ArticlesRow
-            key={category}
-            category={category}
-            articles={enrichedArticles}
-          />
-        );
-      }) : 
-      categoriesToShow.map((category) => {
-        return (
-          <ArticlesRow
-            key={category}
-            category={category}
-            articles={enrichedArticles}
-          />
-        );
-      })}
+      {!user
+        ? CHILD_FRIENDLY_CATEGORIES.map((category) => {
+            return (
+              <ArticlesRow
+                key={category}
+                category={category}
+                articles={enrichedArticles}
+              />
+            );
+          })
+        : categoriesToShow.map((category) => {
+            return (
+              <ArticlesRow
+                key={category}
+                category={category}
+                articles={enrichedArticles}
+              />
+            );
+          })}
     </div>
   );
 };

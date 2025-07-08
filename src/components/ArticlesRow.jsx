@@ -45,7 +45,9 @@ const ArticlesRow = ({ category, articles }) => {
     const isFavorite = currentUser.favorites.includes(category);
 
     if (isFavorite) {
-      currentUser.favorites = currentUser.favorites.filter((cat) => cat !== category);
+      currentUser.favorites = currentUser.favorites.filter(
+        (cat) => cat !== category
+      );
       removeFavoriteCategory(category);
     } else {
       currentUser.favorites.push(category);

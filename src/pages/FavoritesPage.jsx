@@ -1,4 +1,3 @@
-import React from "react";
 import "./FavoritesPage.css";
 import useUser from "../context/useUser";
 import { useNavigate } from "react-router-dom";
@@ -11,7 +10,7 @@ const FavoritesPage = () => {
     <div>
       {!user && navigate("/login")}
       <h1>Oblíbené kategorie</h1>
-      <ArticleCategories categoriesToShow={user.favorites}/>
+      <ArticleCategories categoriesToShow={user.favorites} />
     </div>
   );
 };
