@@ -8,6 +8,8 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [confirmError, setConfirmError] = useState("");
 
   const navigate = useNavigate();
 
@@ -72,16 +74,41 @@ const Register = () => {
             type="password"
             placeholder="create a password"
             value={password}
-            onChange={(event) => setPassword(event.target.value)}
+            onChange={(event) => {
+              const value = event.target.value;
+              setPassword(value);
+
+              setPasswordError(
+                value.length < 8 ? "Heslo musí mít alespoň 8 znaků" : ""
+              );
+
+              setConfirmError(
+                confirmPassword && value !== confirmPassword
+                  ? "Hesla se neshodují"
+                  : ""
+              );
+            }}
           />
+
           <input
             type="password"
             placeholder="confirm password"
             value={confirmPassword}
-            onChange={(event) => setConfirmPassword(event.target.value)}
+            onChange={(event) => {
+              const value = event.target.value;
+              setConfirmPassword(value);
+
+              if (password && password !== value) {
+                setConfirmError("Hesla se neshodují");
+              } else {
+                setConfirmError("");
+              }
+            }}
           />
+          {passwordError && <p className="error">{passwordError}</p>}
+          {confirmError && <p className="error">{confirmError}</p>}
           {error && <p>{error}</p>}
-          <button>Dokončit</button>
+          <button disabled={passwordError || confirmError}>Dokončit</button>
         </form>
       )}
       {step === 3 && (

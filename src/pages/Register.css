@@ -62,3 +62,9 @@ button:hover {
   color: green;
   margin-top: 2rem;
 }
+
+.error {
+  color: #ff6961;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
